@@ -21,7 +21,8 @@ module.exports = async function (context) {
   if (config.tests) {
     jobs.push({
       template: `crud-redux-test.ejs`,
-      target: `src/__tests__/Redux/${name}ReduxTest.js`
+      target: `Tests//Redux/${name}ReduxTest.js`
+      // target: `src/__tests__/Redux/${name}ReduxTest.js`
     })
   }
 
