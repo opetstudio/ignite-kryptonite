@@ -36,7 +36,7 @@ module.exports = async function (context) {
   const fixtureFilePath = `${process.cwd()}/src/Services/FixtureApi.js`
   const apiFilePath = `${process.cwd()}/src/Services/Api.js`
   const importToAdd = `import { post${sagaName}, get${sagaName}s, get${sagaName}, update${sagaName}, remove${sagaName} } from './${sagaName}Sagas'`
-  const crudToAdd = `  const get${initCapName} = data => api.get('${lowerName}s/' + data.id )
+  const crudToAdd = `  const get${initCapName} = data => api.get('${lowerName}s/' + data.id )`
   const post${initCapName} = data => api.post('${lowerName}s/', { ${lowerName}: data })
   const update${initCapName} = data => api.patch('${lowerName}s/' + data.id, { ${lowerName}: data })
   const remove${initCapName} = data => api.delete('${lowerName}s/' + data.id )

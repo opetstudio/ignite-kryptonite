@@ -1,0 +1,65 @@
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+// Add Actions - replace 'Your' with whatever your reducer is called :)
+import <%=props.name%>Actions, {<%=props.name%>Selectors} from './redux'
+import LayoutTableData from '../../Components/LayoutTableData'
+import { makeData } from '../../Utils/Utils'
+
+const <%=props.name%> = LayoutTableData
+const column = [
+  {
+    Header: "Name",
+    columns: [
+      {
+        Header: "First Name",
+        accessor: "firstName"
+      },
+      {
+        Header: "Last Name",
+        id: "lastName",
+        accessor: d => d.lastName
+      }
+    ]
+  },
+  {
+    Header: "Info",
+    columns: [
+      {
+        Header: "Age",
+        accessor: "age"
+      },
+      {
+        Header: "Status",
+        accessor: "status"
+      }
+    ]
+  },
+  {
+    Header: 'Stats',
+    columns: [
+      {
+        Header: "Visits",
+        accessor: "visits"
+      }
+    ]
+  }
+]
+const defaultPageSize = 10
+
+const mapStateToProps = (state) => {
+  return {
+    // ignite boilerplate state list
+    defaultPageSize,
+    column,
+    // allDataArr: <%=props.name%>Selectors.getAllDataArr(state.<%=props.lowerName%>),
+    allDataArr: makeData()
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // ignite boilerplate dispatch list
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(<%= props.name %>)

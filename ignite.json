@@ -4,6 +4,7 @@
     "container",
     "crudsaga",
     "crudredux",
+    "crudcontainerv1",
     "saga",
     "redux",
     "screen" ]
